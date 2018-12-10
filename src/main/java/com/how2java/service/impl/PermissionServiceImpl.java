@@ -98,8 +98,9 @@ public class PermissionServiceImpl implements PermissionService {
 	public boolean needInterceptor(String requestURI) {
 		List<Permission> ps = list();
 		for (Permission p : ps) {
-			if (p.getUrl().equals(requestURI))
+			if (p.getUrl().equals(requestURI)) {
 				return true;
+			}
 		}
 		return false;
 	}

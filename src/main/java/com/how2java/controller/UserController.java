@@ -73,8 +73,9 @@ public class UserController {
 			String encodedPassword = new SimpleHash(algorithmName, password, salt, times).toString();
 			user.setSalt(salt);
 			user.setPassword(encodedPassword);
-		} else
+		} else {
 			user.setPassword(null);
+		}
 
 		userService.update(user);
 
